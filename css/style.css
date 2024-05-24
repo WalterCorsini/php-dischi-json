@@ -14,24 +14,42 @@ body{
 header{
     height: 50px;
     background-color: #001534;
-    header img{
-        width: 50px;
-    }
+}
+header img{
+    width: 50px;
+}
+
+.container-fluid{
+    width: 100%;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .card-disc{
     position: relative;
-    
-    width: calc(80% / 3 - 40px / 3);
-    /* debug */
+    width: calc(90% / 3 - 40px / 3);
     height: 300px;
     background-color: #112030;
     color: #ffffff;
-    .card-disc .img{
-        position: relative;
-        width: 80%;
-        aspect-ratio: 1;
-    }
+}
+
+.card-disc .img{
+    width: 75%;
+    aspect-ratio: 1;
+}
+
+
+.hearts{
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size: 30px;
+    color: red;
+    text-shadow:5px 1px 5px black;
 }
 
 a{
@@ -39,10 +57,12 @@ a{
   text-decoration: none;
   color: white;
 }
+
 .header-nav span{
     padding: 10px 0;
-    .header-nav span:hover{
-            border-bottom: 1px solid white;
-    }
+}
+
+.header-nav span:hover{
+        border-bottom: 1px solid white;
 }
 

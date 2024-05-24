@@ -33,7 +33,7 @@
 
                 <!-- navbar -->
                 <div class="header-nav text-white d-flex gap-5 me-3">
-                    
+
                     <span><a @click.prevent="onlyLiked()" href>Visualizza
                             Preferiti</a></span>
                     <span><a @click.prevent="allAlbum()" href>Visualizza
@@ -45,23 +45,23 @@
             <!-- /header -->
 
             <!-- container -->
-            <div class="container d-flex justify-content-center align-items-center flex-wrap gap-4">
-                    <!-- card -->
-                    <div name="card" @click.prevent="addLike(index)"
-                        v-for="curElem,index in arrayDischi"
-                        class="card-disc d-flex flex-column justify-content-end align-items-center text-center">
+            <div
+                class="container-fluid w-75 d-flex justify-content-center align-items-center flex-wrap gap-4">
+                <!-- card -->
+                <div name="card" @click.prevent="addLike(index)"
+                    v-for="curElem,index in arrayDischi"
+                    class="card-disc d-flex flex-column justify-content-center align-items-center text-center">
 
-                        <div class="img">
-                            <img :src="curElem.poster" alt>
-                        </div>
-                        <div class=" d-flex flex-column">
-                            <!-- show heart if card like is true -->
-                            <span class="hearts" v-if="curElem.like===true">
-                                &hearts; </span>
-                            <h6>{{curElem.title}}</h3>
-                            <span> {{curElem.author}} </span>
-                            <span class="fw-bold mb-2">{{curElem.year}}</span>
-                 
+                    <div class="img">
+                        <img :src="curElem.poster" alt>
+                    </div>
+                    <!-- show heart if card like is true -->
+                    <span class="hearts" v-if="curElem.like === true">
+                        &hearts; </span>
+                    <div class="mt-3 d-flex flex-column">
+                        <span><strong>{{curElem.title}}</strong></span>
+                        <span> {{curElem.author}} </span>
+                        <span class="fw-bold">{{curElem.year}}</span>
                     </div>
                     <!-- card -->
                 </div>
