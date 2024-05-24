@@ -15,15 +15,13 @@ createApp({
         this.arrayDischi = resp.data.results;
           console.log(resp.data.results);
         });
+        
     },
     methods:{
       addLike(elem){
-        elem.like = !elem.like;
-        this.id = elem.id;
         
         const data = {
-          id: this.id,
-          like: true,
+          id: elem,
         };
         axios.post(
           "http://localhost/boolean/php-dischi-json/server.php",
