@@ -3,8 +3,8 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      apiUrl: "http://localhost/boolean/php-dischi-json/server.php",
       arrayDischi: [],
-      active: "",
     };
   },
   created() {
@@ -14,7 +14,7 @@ createApp({
     allAlbum() {
       // show all Dics
       axios
-        .get("http://localhost/boolean/php-dischi-json/server.php")
+        .get(this.apiUrl)
         .then((resp) => {
           this.arrayDischi = resp.data.results;
           console.log(resp.data.results);
@@ -22,12 +22,11 @@ createApp({
     },
     onlyLiked() {
       // show only like
-      this.active = "like";
       const data = {
-        action: this.active,
+        action: "like",
       };
       axios
-        .post("http://localhost/boolean/php-dischi-json/server.php", data, {
+        .post(this.apiUrl, data, {
           headers: {
             "Content-type": "multipart/form-data",
           },
@@ -43,7 +42,7 @@ createApp({
         id: elem,
       };
       axios
-        .post("http://localhost/boolean/php-dischi-json/server.php", data, {
+        .post(this.apiUrl, data, {
           headers: {
             "Content-type": "multipart/form-data",
           },

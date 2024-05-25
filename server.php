@@ -21,7 +21,7 @@ $list_filtered = $list_php;
 // filter only like disk
 if (isset($_POST["action"])) {
     $list_filtered = array_filter($list_filtered, function ($list_filtered) {
-        return $list_filtered["like"] === true;
+        return $list_filtered["like"] == $_POST["action"];
     });
 }
 
