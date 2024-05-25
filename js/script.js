@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       arrayDischi: [],
-      active: "unlike",
+      active: "",
     };
   },
   created() {
@@ -12,7 +12,6 @@ createApp({
   },
   methods: {
     allAlbum() {
-      this.active = "unlike";
       // show all Dics
       axios
         .get("http://localhost/boolean/php-dischi-json/server.php")
@@ -50,9 +49,7 @@ createApp({
           },
         })
         .then((resp) => {
-            if(this.acrive==="unlike"){
-              this.arrayDischi = resp.data.results;
-            }
+          // no resp
         });
     },
   },

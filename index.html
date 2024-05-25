@@ -53,6 +53,7 @@
             <div
                 class="container-fluid w-75 d-flex justify-content-center align-items-center flex-wrap gap-4">
                 <!-- card -->
+                <div class="text-white" v-if="arrayDischi.length===0"> Nessun disco tra i preferiti...</div>
                 <div name="card" @click.prevent="addLike(index)"
                     v-for="curElem,index in arrayDischi"
                     class="card-disc d-flex flex-column justify-content-center align-items-center text-center">
