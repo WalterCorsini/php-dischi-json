@@ -1,3 +1,4 @@
+/*  commons */
 *{
     padding: 0;
     margin: 0;
@@ -11,6 +12,15 @@ body{
     background-color: #1D2D3C;
 }
 
+/* header  */
+.header-nav span{
+    padding: 10px 0;
+}
+
+.header-nav span:hover{
+        border-bottom: 1px solid #ffffff;
+}
+
 header{
     height: 50px;
     background-color: #001534;
@@ -19,6 +29,7 @@ header img{
     width: 50px;
 }
 
+/* main */
 .container-fluid{
     width: 100%;
     padding: 50px;
@@ -58,11 +69,4 @@ a{
   color: white;
 }
 
-.header-nav span{
-    padding: 10px 0;
-}
-
-.header-nav span:hover{
-        border-bottom: 1px solid white;
-}
 

@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       arrayDischi: [],
-      active: false,
+      active: "unlike",
     };
   },
   created() {
@@ -12,8 +12,8 @@ createApp({
   },
   methods: {
     allAlbum() {
+      this.active = "unlike";
       // show all Dics
-      this.active = false;
       axios
         .get("http://localhost/boolean/php-dischi-json/server.php")
         .then((resp) => {
@@ -23,9 +23,9 @@ createApp({
     },
     onlyLiked() {
       // show only like
-      this.active = true;
+      this.active = "like";
       const data = {
-        action: "like",
+        action: this.active,
       };
       axios
         .post("http://localhost/boolean/php-dischi-json/server.php", data, {
@@ -37,11 +37,9 @@ createApp({
           this.arrayDischi = resp.data.results;
         });
     },
-    // "application/x-www-form-urlencoded" usu to send simple text
-    
     addLike(elem) {
-      //  add or remove like
-      this.arrayDischi[elem].like = !this.arrayDischi[elem].like;
+    // change like in local array
+    this.arrayDischi[elem].like = !this.arrayDischi[elem].like;
       const data = {
         id: elem,
       };
@@ -52,9 +50,9 @@ createApp({
           },
         })
         .then((resp) => {
-          if (this.active === false) {
-            this.arrayDischi = resp.data.results;
-          }
+            if(this.acrive==="unlike"){
+              this.arrayDischi = resp.data.results;
+            }
         });
     },
   },

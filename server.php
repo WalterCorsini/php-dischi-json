@@ -1,11 +1,10 @@
 <?php
 
-// ottengo i file dal file json
+// get data to file json
 $list_dischi_json = file_get_contents("dischi.json");
 
-// converto per utilizzare in php
+// vconvert data to use in php
 $list_php = json_decode($list_dischi_json, true);
-
 
 // add or remove like function
 if (isset($_POST["id"])) {
@@ -13,9 +12,10 @@ if (isset($_POST["id"])) {
     $list_php[$id]["like"] = !$list_php[$id]["like"];
 }
 
+// refresh data in file json
 file_put_contents("dischi.json", json_encode($list_php));
 
-// create array filtered to show on page
+// create copy to list_phh "array_filtered" to show on page
 $list_filtered = $list_php;
 
 // filter only like disk
@@ -25,20 +25,16 @@ if (isset($_POST["action"])) {
     });
 }
 
-
-
-
 // save new result in array
 $array = [
     "results" => $list_filtered
 ];
 
-
-//  trasformo in stringa json
+//  transform to json string
 $json_string = json_encode($array);
 
-//  passo il contenuto a javascript
+// creates the information regarding the http response
 header("Content-Type: application/json");
 
-// gli invio la risposta
+// sent response
 echo $json_string;

@@ -27,17 +27,22 @@
                 <!-- logo -->
                 <div>
                     <img class="logo" src="./img/logo.jpg" alt>
-                    <span class="fw-bold text-white"> Booltify</span>
+                    <span class="fw-bold text-white">
+                        Booltify
+                    </span>
                 </div>
                 <!-- /logo -->
 
                 <!-- navbar -->
                 <div class="header-nav text-white d-flex gap-5 me-3">
-
-                    <span><a @click.prevent="onlyLiked()" href>Visualizza
-                            Preferiti</a></span>
-                    <span><a @click.prevent="allAlbum()" href>Visualizza
-                            Tutto</a></span>
+                    <span @click.prevent="onlyLiked()">
+                        <a href>
+                            VisualizzaPreferiti
+                        </a>
+                    </span>
+                    <span @click.prevent="allAlbum()">
+                        <a href>Visualizza Tutto</a>
+                    </span>
                 </div>
                 <!-- /navbar -->
 
@@ -57,11 +62,18 @@
                     </div>
                     <!-- show heart if card like is true -->
                     <span class="hearts" v-if="curElem.like === true">
-                        &hearts; </span>
+                        &hearts;
+                    </span>
                     <div class="mt-3 d-flex flex-column">
-                        <span><strong>{{curElem.title}}</strong></span>
-                        <span> {{curElem.author}} </span>
-                        <span class="fw-bold">{{curElem.year}}</span>
+                        <span>
+                            <strong>{{curElem.title}}</strong>
+                        </span>
+                        <span>
+                            {{curElem.author}}
+                        </span>
+                        <span class="fw-bold">
+                            {{curElem.year}}
+                        </span>
                     </div>
                     <!-- card -->
                 </div>
