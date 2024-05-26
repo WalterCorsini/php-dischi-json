@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      apiUrl: "http://localhost/boolean/php-dischi-json/server.php",
+      apiUrl: "http://localhost/boolean/php-dischi-json/back-end/server.php",
       arrayDischi: [],
     };
   },

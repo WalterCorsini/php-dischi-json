@@ -12,6 +12,7 @@ body{
     background-color: #1D2D3C;
 }
 
+
 /* header  */
 .header-nav span{
     padding: 10px 0;
@@ -30,28 +31,6 @@ header img{
 }
 
 /* main */
-.container-fluid{
-    width: 100%;
-    padding: 50px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card-disc{
-    position: relative;
-    width: calc(90% / 3 - 40px / 3);
-    height: 300px;
-    background-color: #112030;
-    color: #ffffff;
-}
-
-.card-disc .img{
-    width: 75%;
-    aspect-ratio: 1;
-}
 
 
 .hearts{
@@ -67,6 +46,11 @@ a{
   list-style: none;
   text-decoration: none;
   color: white;
+}
+
+.card{
+    background-color: #001534;
+    color: #ffffff;
 }
 
 
